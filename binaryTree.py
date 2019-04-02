@@ -24,6 +24,18 @@ class Node:
             if self.right:
                 self.right.data_display()
 
+    def find_entry(self, dataVal):
+        if dataVal < self.data :
+            if self.left is None:
+                return print(str(dataVal) + " Not Found")
+            self.left.find_entry(dataVal)
+        elif dataVal > self.data :
+            if self.right is None:
+                return print(str(dataVal) + " Not Found")
+            self.right.find_entry(dataVal)
+        else:
+            print(str(dataVal) + " Found It")
+
 
 tree = Node(90)
 tree.data_insert(50)
@@ -45,4 +57,6 @@ tree.data_insert(200)
 
 tree.data_display()
 
+tree.find_entry(10)
+tree.find_entry(201)
 
